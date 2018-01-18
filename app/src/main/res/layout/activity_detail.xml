@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+    <TextView
+        android:id="@+id/movie_title_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgroundTitleDetail"
+        android:textColor="@android:color/white"
+        android:padding="30dp"
+        android:textSize="22sp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+        <ImageView
+            android:id="@+id/movie_image_detail"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:contentDescription="@string/content_image"
+            />
+        <TextView
+            android:id="@+id/tv_release_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/movie_image_detail"
+            android:layout_toEndOf="@+id/movie_image_detail"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/tv_vote_average"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/movie_image_detail"
+            android:layout_toEndOf="@+id/movie_image_detail"
+            android:layout_below="@+id/tv_release_date"
+            android:layout_marginTop="4dp"
+            android:textSize="18sp"/>
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/favorite_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_vote_average"
+            android:layout_toRightOf="@+id/movie_image_detail"
+            android:layout_toEndOf="@+id/movie_image_detail"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorButtonFavourite"
+            android:textColor="@color/white"
+            tools:text="Add to Favorite"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/review_trailer_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_detail_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="18sp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/darker_gray"/>
+            <TextView
+                android:id="@+id/trailer_label"
+                style="@style/DetailLabel"
+                android:text="@string/trailer_label"
+                />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_trailers_recycler_view"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/darker_gray"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

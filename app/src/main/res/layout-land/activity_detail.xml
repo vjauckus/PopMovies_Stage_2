@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+    <TextView
+        android:id="@+id/movie_title_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgroundTitleDetail"
+        android:textColor="@android:color/white"
+        android:padding="30dp"
+        android:textSize="22sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/movie_image_detail"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:contentDescription="@string/content_image" />
+        <Button
+            android:id="@+id/favorite_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_toRightOf="@id/movie_image_detail"
+            android:layout_toEndOf="@+id/movie_image_detail"
+            android:background="@color/colorButtonFavourite"
+            android:textColor="@color/white"
+            tools:text="Add to Favorite" />
+        <TextView
+            android:id="@+id/tv_detail_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@+id/movie_image_detail"
+            android:layout_toEndOf="@+id/movie_image_detail"
+            android:layout_below="@id/favorite_button"
+            tools:text="This is the best film of the Year"
+            android:textSize="18sp"
+            />
+
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/movie_image_detail">
+
+
+            <TextView
+                android:id="@+id/tv_release_date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_vote_average"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+
+        android:id="@+id/review_trailer_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray"/>
+        <TextView
+            android:id="@+id/trailer_label"
+            style="@style/DetailLabel"
+            android:text="@string/trailer_label"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_trailers_recycler_view"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/darker_gray"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

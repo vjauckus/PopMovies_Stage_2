@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/favorite_recycle_view_movie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
+    <TextView
+        android:id="@+id/tv_favourites_not_here_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:text="@string/see_favourites"
+        android:textSize="22sp"
+        android:textColor="@android:color/white"
+        android:background="@color/colorBackgroundTitleDetail"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tv_favourites_not_here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:text="@string/favourites_not_here"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+</LinearLayout>
