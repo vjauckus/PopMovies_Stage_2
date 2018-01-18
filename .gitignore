@@ -25,3 +25,4 @@ proguard/
 # IntelliJ
 *.iml
 .idea
+keystore.properties
