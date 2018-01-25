@@ -402,8 +402,16 @@ public class DetailActivity extends AppCompatActivity implements TrailerAdapter.
         }
         else if(id == R.id.action_share){
             Intent shareIntent = createShareMovieIntent();
-            startActivity(shareIntent);
-            return true;
+            if (shareIntent != null){
+                startActivity(shareIntent);
+                return true;
+            }
+            else{
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.sharing_error), Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -411,17 +419,32 @@ public class DetailActivity extends AppCompatActivity implements TrailerAdapter.
 
     private Intent createShareMovieIntent(){
 
-        String myMovieTip = "\nLet me recommend you this movie: \n\n"+mCurrentMovie.getTitle()+"\n\n";
-        myMovieTip = myMovieTip + "http://www.youtube.com/watch?v="+mTrailers.get(0).getVideoKey();
+        String myMovieTip = "\n"+this.getApplicationContext().getResources().getString(R.string.my_movie_tip)+"\n\n"+mCurrentMovie.getTitle()+"\n\n";
+
        // sAux = "https://play.google.com/store/apps/details?id=Orion.Soft \n\n";
-        //
         try {
-        Intent shareIntent = ShareCompat.IntentBuilder.from(this)
-            .setType("text/plain")
-            .setText(myMovieTip)
-            .getIntent();
-        shareIntent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-        return shareIntent;
+            if (mTrailers != null && mTrailers.size()!= 0){
+                String myMovieTipVideo = myMovieTip + "http://www.youtube.com/watch?v="+mTrailers.get(0).getVideoKey();
+                Intent shareIntent = ShareCompat.IntentBuilder.from(this)
+                        .setType("text/plain")
+                        .setText(myMovieTipVideo)
+                        .getIntent();
+                shareIntent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, this.getApplicationContext().getResources().getString(R.string.my_movie_tip));
+                return shareIntent;
+
+            }
+            else{
+                Intent sendIntent = new Intent();
+                sendIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, myMovieTip);
+                sendIntent.putExtra(Intent.EXTRA_SUBJECT, this.getApplicationContext().getResources().getString(R.string.my_movie_tip));
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+                return sendIntent;
+            }
+
 
     }
     catch (Exception e){

@@ -31,12 +31,14 @@
     <string name="trailer_1">Trailer 1</string>
     <string name="trailer_item_label">Trailer</string>
     <string name="trailer_loading_error">Loading of trailers does not work proper. PLease try again</string>
+    <string name="sharing_error">Sharing is not possible.</string>
     <string name="play_icon_image">play icon</string>
 
     <string name="review_label">Reviews</string>
     <string name="review_author_dummy">Review of unknown author</string>
     <string name="reviews_not_available">There are no reviews available</string>
     <string name="action_share">SHARE</string>
+    <string name="my_movie_tip">Let me recommend you this movie: </string>
     <string name="playing_video_error">Playing video is not possible</string>
     <string name="remove_as_favourite_success">Super. The movie is not your favourite anymore</string>
     <string name="remove_as_favourite_error">The remove of movie from favourite database is not successfully</string>
