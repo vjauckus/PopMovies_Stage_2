@@ -25,17 +25,17 @@ android {
         applicationId "com.veronika.android.popmovies"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.01"
+        versionCode 3
+        versionName "2.03"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-     /*   release {
+       release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
-        */
+
         debug {
             debuggable false
             signingConfig signingConfigs.config
